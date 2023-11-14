@@ -48,11 +48,11 @@ public class JobData {
     public static String getFieldValue(Job job, String fieldName){
         String theValue;
         if (fieldName.equals("name")){
-            theValue = job.getName();
+            theValue = job.toString();
         } else if (fieldName.equals("employer")){
-            theValue = job.getEmployer().toString();
+            theValue = String.valueOf(job.getEmployer());
         } else {
-            theValue = job.getSkills().toString();
+            theValue = String.valueOf(job.getSkills());
         }
 
         return theValue;
@@ -72,7 +72,7 @@ public class JobData {
 
         for (Job job : allJobs) {
 
-            if (job.getName().toLowerCase().contains(value.toLowerCase())) {
+            if (job.getEmployer().toString().toLowerCase().contains(value.toLowerCase())) {
                 results.add(job);
             } else if (job.getEmployer().toString().toLowerCase().contains(value.toLowerCase())) {
                 results.add(job);

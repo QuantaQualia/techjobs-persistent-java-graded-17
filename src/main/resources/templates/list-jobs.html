@@ -33,7 +33,16 @@
             </td>
         </tr>
     </table>
-
+    <div>
+        <form method="get" action="/list/jobs">
+            <label for="employer">Filter by Employer:</label>
+            <select name="column" id="employer">
+                <option value="all">All Employers</option>
+                <option th:each="employer : ${employers}" th:value="${employer.id}" th:text="${employer.name}"></option>
+            </select>
+            <input type="submit" value="Filter">
+        </form>
+    </div>
 </div>
 
 </body>
